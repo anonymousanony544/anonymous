@@ -62,6 +62,7 @@ class MyDataset(Dataset):
 def main():
     device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
 
+    # load the dataset here, update the path
     speed = loaddata('')
     inflow = loaddata('')
     demand = loaddata('')
