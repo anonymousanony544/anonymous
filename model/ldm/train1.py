@@ -79,6 +79,7 @@ def generate_mask(batch_size, num_hours, mask_num):
 
 def main():
     device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
+    # update the data path
     speed = loaddata('')
     inflow = loaddata('')
     demand = loaddata('')
