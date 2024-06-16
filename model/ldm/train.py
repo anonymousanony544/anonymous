@@ -64,6 +64,7 @@ def process_edges(edge):
 def main():
     device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
 
+    # update the data path here
     speed = loaddata('')
     inflow = loaddata('')
     demand = loaddata('')
