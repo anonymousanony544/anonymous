@@ -175,7 +175,8 @@ def main():
                 embed_data = model.encoder(data_regionx, edge_indices)
                 recover_data = diff_model(embed_data, data_edge, mask)
                 prediction = model.decoder(recover_data, edge_indices)
-
+                masked_data_region = data_region * (1 - mask.unsqueeze(-1).unsqueeze(-1))
+                masked_prediction = prediction * (1 - mask.unsqueeze(-1).unsqueeze(-1))
                 loss = criterion_recon(masked_prediction, masked_data_region)
                 loss.backward(retain_graph=True)
 
